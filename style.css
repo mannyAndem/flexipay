@@ -8,11 +8,11 @@
 
 @font-face {
   font-family: "Clash Display";
-  src: url(assets/fonts/ClashDisplay_Complete/Fonts/Variable/ClashDisplay-Variable.ttf);
+  src: url(assets/fonts/ClashDisplay-Variable.ttf);
 }
 @font-face {
   font-family: "Clash Grotesk";
-  src: url(assets/fonts/ClashGrotesk_Complete/Fonts/Variable/ClashGrotesk-Variable.ttf);
+  src: url(assets/fonts/ClashGrotesk-Variable.ttf);
 }
 /* Resetting some default styling */
 * {
@@ -556,7 +556,7 @@ footer .container-1 > div:first-child {
 }
 
 /* MEDIA QUERIES */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 800px) {
   body {
     overflow-x: hidden;
   }
