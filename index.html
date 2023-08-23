@@ -5,13 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Flexipay</title>
     <link rel="stylesheet" href="style.css" />
+
+    <!-- fontawesome icon -->
+    <script
+      src="https://kit.fontawesome.com/d88dfd5f20.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
+    <!-- navbar-->
     <header>
       <nav>
         <div class="navbrand">FlexiPAY</div>
-        <a class="nav-toggle"
-          ><svg
+        <ul class="nav-links desktop-nav">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">FAQs</a></li>
+        </ul>
+        <button class="contact-us-btn desktop-nav">Contact us &#8594;</button>
+        <!-- nav toggle buttons for mobile -->
+        <div class="nav-toggle">
+          <svg
+            class="open"
             width="32"
             height="32"
             viewBox="0 0 32 32"
@@ -38,8 +53,12 @@
               stroke-linecap="round"
             />
           </svg>
-        </a>
-        <div class="nav-menu">
+          <div class="close nav-hidden">
+            <i class="fa-solid fa-x"></i>
+          </div>
+        </div>
+        <!-- nav toggle end -->
+        <div class="nav-menu-mobile nav-hidden">
           <ul class="nav-links">
             <li><a href="#">About</a></li>
             <li><a href="#">Products</a></li>
@@ -88,6 +107,8 @@
           />
         </div>
       </section>
+
+      <!-- How it works section -->
       <section class="how-it-works">
         <div class="text-div">
           <div class="intro-text">
@@ -114,13 +135,15 @@
         </div>
         <div class="img-div">
           <img
-            src="assets/images/Frame 427321149.png"
+            src="assets/images/download-img.png"
             alt="A mobile phone"
             id="how-it-works-img"
             class="how-it-works-img"
           />
         </div>
       </section>
+
+      <!-- Features section -->
       <section class="features-section">
         <div class="text">
           <h2>
@@ -132,6 +155,8 @@
             needs.
           </p>
         </div>
+
+        <!-- grid-start -->
         <div class="grid-container">
           <div class="send-and-receive-money">
             <div>
@@ -196,10 +221,13 @@
           </div>
           <div class="see-more">
             <h3>See more of our features here</h3>
-            <button class="see-more-btn">See more &#8594;</button>
+            <button class="see-more-btn">See more <span>&#8594;</span></button>
           </div>
         </div>
+        <!-- grid end -->
       </section>
+
+      <!-- join flexi section -->
       <section class="join-flexi">
         <div class="container">
           <div class="img-container">
@@ -227,6 +255,8 @@
           </div>
         </div>
       </section>
+
+      <!-- faqs section -->
       <section class="faqs">
         <div class="container">
           <div class="heading">
@@ -241,6 +271,8 @@
               <span>More than 100k<br />users worldwide</span>
             </div>
           </div>
+
+          <!-- accordion -->
           <div class="list-container">
             <ul id="accordion">
               <li>
@@ -255,7 +287,6 @@
                     class="faq-toggle"
                   />
                 </div>
-
                 <p class="hidden">
                   Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                   Dolor reiciendis illo reprehenderit porro dignissimos soluta
@@ -336,8 +367,11 @@
               </li>
             </ul>
           </div>
+          <!-- accordion end -->
         </div>
       </section>
+
+      <!-- testimonials section -->
       <section class="testimonials">
         <div class="container">
           <span class="text-center">TESTIMONIALS</span>
@@ -426,6 +460,8 @@
           </div>
         </div>
       </section>
+
+      <!-- Subscribe section -->
       <section class="subscribe-to-newsletter">
         <div class="container">
           <div>
@@ -439,6 +475,8 @@
         </div>
       </section>
     </main>
+
+    <!-- Footer -->
     <footer>
       <div class="container-1">
         <div>
@@ -480,6 +518,8 @@
         </div>
       </div>
     </footer>
+
+    <!-- Script for some interactivity -->
     <script src="app.js"></script>
   </body>
 </html>

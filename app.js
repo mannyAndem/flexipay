@@ -1,42 +1,21 @@
+// nav menu functionality
+const navMenu = document.querySelector(".nav-menu-mobile");
+const navToggle = document.querySelector(".nav-toggle");
+const navToggleOpen = document.querySelector(".open");
+const navToggleClose = document.querySelector(".close");
+
+navToggleOpen.addEventListener("click", () => {
+  navToggleOpen.classList.add("nav-hidden");
+  navMenu.classList.remove("nav-hidden");
+  navToggleClose.classList.remove("nav-hidden");
+});
+navToggleClose.addEventListener("click", () => {
+  navToggleClose.classList.add("nav-hidden");
+  navMenu.classList.add("nav-hidden");
+  navToggleOpen.classList.remove("nav-hidden");
+});
+
 // Interactions for the how-it-works section
-
-const howItWorksImg = document.querySelector("#how-it-works-img");
-
-// download hover
-const download = document.querySelector("#download");
-download.addEventListener("mouseover", () => {
-  fadeInOut("assets/images/download.png");
-});
-// download.addEventListener("mouseleave", () => {
-//   fadeInOut("assets/images/Frame 427321149.png");
-// });
-
-// register hover
-const register = document.querySelector("#register");
-register.addEventListener("mouseover", () => {
-  fadeInOut("assets/images/register.png");
-});
-// register.addEventListener("mouseleave", () => {
-//   howItWorksImg.src = "assets/images/Frame 427321149.png";
-// });
-
-// verify account hover
-const verify = document.querySelector("#verify");
-verify.addEventListener("mouseover", () => {
-  fadeInOut("assets/images/verify-account.png");
-});
-// verify.addEventListener("mouseleave", () => {
-//   howItWorksImg.src = "assets/images/Frame 427321149.png";
-// });
-
-// start transacting hover
-const startTransacting = document.querySelector("#start-transacting");
-startTransacting.addEventListener("mouseover", () => {
-  fadeInOut("assets/images/start-transacting.png");
-});
-// startTransacting.addEventListener("mouseleave", () => {
-//   howItWorksImg.src = "assets/images/Frame 427321149.png";
-// });
 
 // function to make the images fade smoothly in and out
 function fadeInOut(imgUrl) {
@@ -50,6 +29,31 @@ function fadeInOut(imgUrl) {
     }, 100);
   }, 100);
 }
+const howItWorksImg = document.querySelector("#how-it-works-img");
+
+// download hover
+const download = document.querySelector("#download");
+download.addEventListener("mouseover", () => {
+  fadeInOut("assets/images/download-img.png");
+});
+
+// register hover
+const register = document.querySelector("#register");
+register.addEventListener("mouseover", () => {
+  fadeInOut("assets/images/register.png");
+});
+
+// verify account hover
+const verify = document.querySelector("#verify");
+verify.addEventListener("mouseover", () => {
+  fadeInOut("assets/images/verify-account.png");
+});
+
+// start transacting hover
+const startTransacting = document.querySelector("#start-transacting");
+startTransacting.addEventListener("mouseover", () => {
+  fadeInOut("assets/images/start-transacting.png");
+});
 
 // Interactions for the accordion section
 

@@ -25,6 +25,7 @@
 body {
   background: #151617;
   cursor: default;
+  overflow-x: hidden;
 }
 section {
   padding: 6rem 4rem;
@@ -71,6 +72,23 @@ p {
   gap: 1em;
   align-items: center;
 }
+
+/* custom scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #a9e363cc;
+  border-radius: 20px;
+}
+
 /* Nav Styles */
 nav {
   width: 100vw;
@@ -87,11 +105,11 @@ nav {
 .nav-toggle {
   display: none;
 }
-.nav-menu {
-  display: flex;
-  justify-content: space-between;
-  width: 50%;
-  align-items: center;
+.desktop-nav {
+  display: block;
+}
+.nav-menu-mobile {
+  display: none;
 }
 .nav-links {
   display: flex;
@@ -287,10 +305,22 @@ section.how-it-works > div {
 .see-more-btn {
   font-family: "Clash Display";
   padding: 1em;
+  display: flex;
+  align-items: center;
+  gap: 5px;
   border-radius: 0.5em;
   border: 1px solid #000;
   background: #a9e363;
   cursor: pointer;
+  transition: all 300ms ease-in-out;
+  color: #151617;
+}
+.see-more-btn span {
+  color: #151617;
+}
+.see-more-btn:hover {
+  background: #151617;
+  color: #ccc;
 }
 
 /* join-flexi section */
@@ -411,7 +441,8 @@ section.how-it-works > div {
   display: flex;
   gap: 2em;
   flex-wrap: nowrap;
-  overflow-x: hidden;
+  overflow-x: scroll;
+  padding-bottom: 2em;
 }
 .card {
   background: linear-gradient(
@@ -459,6 +490,7 @@ section.how-it-works > div {
   background: #a9e363;
   display: flex;
   align-items: center;
+  border-radius: 16px;
 }
 .subscribe-to-newsletter .container > div {
   width: 50%;
@@ -475,9 +507,16 @@ section.how-it-works > div {
   padding: 12px;
   border-radius: 12px;
   background: #151617;
+  border: 1px solid #151617;
   color: #ccc;
   font-family: "Clash Display";
   font-size: 20px;
+  transition: all 300ms ease-in-out;
+  cursor: pointer;
+}
+.subscribe-btn:hover {
+  background: transparent;
+  color: #151617;
 }
 .input-container input {
   padding: 1em;
@@ -556,21 +595,124 @@ footer .container-1 > div:first-child {
 }
 
 /* MEDIA QUERIES */
+@media screen and (max-width: 1200px) {
+  /*features section */
+  .grid-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+  }
+  .grid-container > div {
+    border: 1px solid #ccc;
+    border-radius: 1em;
+    background: linear-gradient(
+      156deg,
+      rgba(255, 255, 255, 0.2) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    padding: 4em;
+    gap: 4em;
+  }
+  .grid-container img {
+    width: 100%;
+  }
+  .send-and-receive-money {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .currency-exchange {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .airtime-and-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-between;
+  }
+  .network-logos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5em;
+  }
+  .bill-payments {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-between;
+  }
+  .grid-container > .see-more {
+    background: #a9e363;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1.5em;
+    padding: 4em 1em;
+  }
+}
+
 @media screen and (max-width: 800px) {
   body {
+    width: 100vw;
     overflow-x: hidden;
   }
   section {
     padding: 4rem 1rem;
   }
-  .nav-toggle {
-    display: block;
-  }
   /* nav */
   nav {
     padding: 1em;
   }
-  .nav-menu {
+  .desktop-nav {
+    display: none;
+  }
+  .nav-menu-mobile {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 8888;
+    height: 100vh;
+    background: #151617aa;
+    backdrop-filter: blur(8px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4em;
+    padding: 20vh 4em 4em 4em;
+  }
+  .nav-menu-mobile ul {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+  }
+  .nav-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    z-index: 9999;
+  }
+  .open {
+    width: 32px;
+    height: 32px;
+  }
+  .close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #a9e363;
+    width: 32px;
+    height: 32px;
+  }
+  .nav-hidden {
     display: none;
   }
   /* hero section */
