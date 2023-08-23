@@ -135,7 +135,11 @@ nav {
   background: transparent;
   color: #a9e363;
 }
-/* Top section Styles */
+/* hero section Styles */
+
+.hero {
+  padding-bottom: 0;
+}
 .headline {
   display: flex;
   flex-direction: column;
